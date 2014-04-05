@@ -627,7 +627,8 @@ public class Acl2Parser extends AbstractParser {
 							result.addNotice(new Acl2ParserNotice(this, msg, top, token.offset + 1));
 						}
 						s.pop();
-						if (top.name != null && top.name.equals("include-book")) {
+						if (top.name != null && top.name.equals("include-book")
+								&& !top.params.isEmpty()) {
 							String bookName = top.params.get(0);
 							int dirLoc = top.params.indexOf(":dir") + 1;
 							File dir;

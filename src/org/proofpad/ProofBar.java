@@ -241,7 +241,7 @@ public class ProofBar extends JComponent {
 		try {
 			for (int i = segments.size() - 1; i >= 0; i--) {
 				PBSegment seg = segments.get(i);
-				if (seg.fill.equals(Color.WHITE)) {
+				if (seg.fill == null || seg.fill.equals(Color.WHITE)) {
 					continue;
 				}
 				int begin = seg.begin;

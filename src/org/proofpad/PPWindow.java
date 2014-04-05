@@ -589,7 +589,8 @@ public class PPWindow extends JFrame {
 	protected void closeInfoBar() {
 		Component child = ((BorderLayout) splitTop.getLayout())
 				.getLayoutComponent(BorderLayout.PAGE_START);
-		splitTop.remove(child);
+		if (child != null)
+			splitTop.remove(child);
 		editor.clearMarkAllHighlights();
 		splitTop.revalidate();
 	}

@@ -83,6 +83,7 @@ public class GenerateData {
 		} while (booksToParse.size() > 0);
 		cache.setBookCache(bookCache);
 
+		new File("data").mkdir();
 		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/cache.dat"));
 		oos.writeObject(cache);
 		oos.close();

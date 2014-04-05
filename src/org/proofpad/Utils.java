@@ -57,8 +57,11 @@ public class Utils {
             e1.printStackTrace();
             return null;
         }
-        String content = scan.useDelimiter("\\Z").next();
-        content = content.replaceAll("\\r", "");
+        String content = "";
+        if (scan.hasNext()) { // don't throw if file is entirely empty
+	        content = scan.useDelimiter("\\Z").next();
+	        content = content.replaceAll("\\r", "");
+        }
         scan.close();
         return content;
     }

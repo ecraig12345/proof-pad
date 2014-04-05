@@ -333,7 +333,7 @@ public class Acl2 extends Thread {
 //				processBuilder = new ProcessBuilder(ctrlcPath, maybeAcl2Path);
 				processBuilder = new ProcessBuilder(maybeAcl2Path);
 			} else {
-				processBuilder = new ProcessBuilder("sh", "-c", "echo \"$$\"; exec \"$0\" \"$@\"" + maybeAcl2Path);
+				processBuilder = new ProcessBuilder("sh", "-c", "echo \"$$\"; exec \"$0\" \"$@\"" + '"' + maybeAcl2Path + '"');
 			}
 			File maybeWorkingDir;
 			if (workingDir == null) {
