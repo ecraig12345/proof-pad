@@ -71,7 +71,11 @@ public class Main {
 		});
 		
 		logtime("Start loading cache");
-		ObjectInputStream ois = new ObjectInputStream(Main.class.getResource("/data/cache.dat").openStream());
+		URL cacheURL = Main.class.getResource("/data/cache.dat");
+		if (cacheURL == null)
+			// This works if the the data folder is in the classpath
+			cacheURL = Main.class.getResource("/cache.dat");
+		ObjectInputStream ois = new ObjectInputStream(cacheURL.openStream());
 		cache = (CacheData) ois.readObject();
 		logtime("Loaded cache");
 		

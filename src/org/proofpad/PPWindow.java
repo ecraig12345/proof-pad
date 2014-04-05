@@ -179,6 +179,9 @@ public class PPWindow extends JFrame {
 				acl2Paths.add("C:\\PROGRA~1\\PROOFP~1\\acl2\\run_acl2.exe");
 				acl2Paths.add("C:\\PROGRA~2\\PROOFP~1\\acl2\\run_acl2.exe");
 				acl2Paths.add("C:\\PROGRA~3\\PROOFP~1\\acl2\\run_acl2.exe");
+			} else if (Main.OSX) {
+				acl2Paths.add("/Applications/Proof Pad.app/Contents/" +
+						"Resources/Java/acl2/run_acl2");
 			}
 			try {
 				String maybeAcl2Path;
